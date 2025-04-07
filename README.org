@@ -17,7 +17,7 @@ Here's mainly what I think is missing:
     - [ ] if =citar-notes-paths=
     - [ ] if =org-node-ask-directory= is true
 #+begin_quote
-⚠️ Caveat: NOTES are created them like I want to usually which is using all info from the original paper (author/title/date).
+Notes are currently created has I usually like, which is using all info from the original paper (author/title/date).
 #+end_quote
 
 *** Directions
