@@ -2,8 +2,7 @@
 A small emacs package to integrate org-node with citar.
 #+begin_quote
 1. It seems like org-node is close to a major rewrite using indexed so there's probably no need to change all your configuration too soon
-2. This is my first emacs packages there's probably a lot of wrong stuff in here so be careful about using it (maybe backup!)
-   - If you're filling risky and try that anyway let me know how it goes and what could be changed
+2. This is my first emacs packages I've tried my best but let me know how it goes and what I can improve if you decide to use it
 #+end_quote
 
 ** ⚠️ This is still a work in progress
@@ -17,14 +16,19 @@ Here's mainly what I think is missing:
     - [ ] if =citar-notes-paths=
     - [ ] if =org-node-ask-directory= is true
 #+begin_quote
-Notes are currently created has I usually like, which is using all info from the original paper (author/title/date).
+Notes are currently created has I usually like, which is using all info from the original paper (author/title/date) gathered with citar.
 #+end_quote
 
 *** Directions
-Ideally I would like for this package to not need configuration and assume a reasonable default from configuration in citar and org-node
+Ideally I would like for this package to need as little configuration as possible and assume a reasonable default from configuration in citar and org-node.
+
+Looking from what I still need to do above for example, if org-node is supposed to use org-capture as a creation fn I would like citar to use capture template as well.
 
 ** Install
-This installation should work but I didn't try using it as I'm using a custom org layer in [[https://github.com/doomemacs/doomemacs][doom-emacs]] with a local installation
+This installation should work but I didn't try using it as I'm using a custom org layer in [[https://github.com/doomemacs/doomemacs][doom-emacs]] with a local installation.
+#+html: <details><summary>
+*** Vanilla Emacs
+#+html: </summary>
 #+begin_src emacs-lisp
   (use-package citar-org-node
     :vc (:url "https://github.com/Rathur421/citar-org-node" :branch "main")
@@ -32,6 +36,7 @@ This installation should work but I didn't try using it as I'm using a custom or
     :config
     (citar-org-node-setup))
 #+end_src
+#+html: </details>
 
 ** Acknowledgements
 Thanks to the developer of [[https://github.com/emacs-citar/citar][citar]] for the amazing bibliography front end that is now essential to my workflow!
