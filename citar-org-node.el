@@ -4,7 +4,7 @@
 ;;
 ;; Author: Arthur Varon <arthur.varon@gmail.com>
 ;; Created: February 12, 2024
-;; Version: 0.5.1
+;; Version: 0.2.0
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 ;; Package-Requires: ((emacs "27.1"))
 ;;
