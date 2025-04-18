@@ -44,8 +44,8 @@ before calling `citar-open' on them."
 This just remove the @ at the beginning of each refs in the node."
   (mapcar (lambda (str)
             (if (string-prefix-p "@" str)
-                (substring original-ref 1)
-              original-ref))
+                (substring str 1)
+              str))
           (org-node-get-refs node)))
 
 ;;;###autoload
