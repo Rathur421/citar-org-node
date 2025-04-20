@@ -5,33 +5,62 @@ A small emacs package to integrate org-node with citar.
 2. This is my first emacs packages I've tried my best but let me know how it goes and what I can improve if you decide to use it
 #+end_quote
 
+** Customize
+Citar-org-node use the citar note template you can customize the note template as you wish (here's what I'm using)
+#+begin_src emacs-lisp
+  (with-eval-after-load citar
+    (setf (cdr (assoc 'note citar-templates))
+          "${title}\n#+author: ${author editor:%etal}\n#+date: ${date} "))
+#+end_src
+
 ** ⚠️ This is still a work in progress
 Here's mainly what I think is missing:
-- [0/2] customize note creation template
-  - [ ] with citar note title
+- [1/2] customize note creation template
+  - [X] with citar note title
   - [ ] with org templating system
+    - not sure how to go about this one so let me know what's you're intended workflow if you're interested in it
 - [0/2] A bunch of other small todos
   - [ ] for know in some parts :ROAM_REFS: assumed to start with =@=
+    - this is the case when you create a file (prefered because it semms to work out of the box when using embark)
   - [ ] what if multiple path are possible
-    - [ ] if =citar-notes-paths=
+    - [ ] if =citar-notes-paths= (probably already handled by citar when creating new files)
     - [ ] if =org-node-ask-directory= is true
+
 #+begin_quote
-Notes are currently created has I usually like, which is using all info from the original paper (author/title/date) gathered with citar.
+If you want to use it with the above mentionned option (for your own workflow) let me know how we could handle those case!
 #+end_quote
 
 *** Directions
 Ideally I would like for this package to need as little configuration as possible and assume a reasonable default from configuration in citar and org-node.
 
-Looking from what I still need to do above for example, if org-node is supposed to use org-capture as a creation fn I would like citar to use capture template as well.
-
 ** Install
-This installation should work but I didn't try using it as I'm using a custom org layer in [[https://github.com/doomemacs/doomemacs][doom-emacs]] with a local installation.
+These installations should work but I try them let me know how it goes for you and what can I change
+
 #+html: <details><summary>
 *** Vanilla Emacs
 #+html: </summary>
 #+begin_src emacs-lisp
   (use-package citar-org-node
     :vc (:url "https://github.com/Rathur421/citar-org-node" :branch "main")
+    :after citar
+    :config
+    (citar-org-node-setup))
+#+end_src
+#+html: </details>
+#+html: <details><summary>
+*** Doom emacs
+#+html: </summary>
+In your =doomdir/packages.el=
+#+begin_src emacs-lisp
+  (package! citar-org-node
+    :recipe (:host github
+             :repo "Rathur421/citar-org-node"
+             :files ("*.el")))
+#+end_src
+
+In your =doomdir/config.el=
+#+begin_src emacs-lisp
+  (use-package! citar-org-node
     :after citar
     :config
     (citar-org-node-setup))
