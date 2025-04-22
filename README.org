@@ -1,5 +1,4 @@
-⚠️ Hey I was just noticed that there was already a similar package so go try it first!
-
+⚠️ I was just noticed that there was already a similar package so I'm archiving this repo
 [[https://github.com/krisbalintona/citar-org-node]]
 
 * citar-org-node
